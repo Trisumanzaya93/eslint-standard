@@ -37,13 +37,13 @@ fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2));
 
 // 5. Copy eslint.config.mjs
 const configTarget = path.join(cwd, "eslint.config.mjs");
-if (!fs.existsSync(configTarget)) {
-  const template = fs.readFileSync(
-    new URL("./eslint.config.mjs.template", import.meta.url),
-    "utf-8"
-  );
-  fs.writeFileSync(configTarget, template);
-}
+const template = fs.readFileSync(
+  new URL("./eslint.config.mjs.template", import.meta.url),
+  "utf-8"
+);
+
+fs.writeFileSync(configTarget, template);
+console.log("✏️ eslint.config.mjs overwritten with standard config");
 
 // 6. Install deps
 console.log("📦 Installing dependencies...\n");
