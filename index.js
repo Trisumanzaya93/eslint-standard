@@ -29,7 +29,7 @@ Object.assign(pkg.devDependencies, {
   "@typescript-eslint/parser": "^8",
   "@typescript-eslint/eslint-plugin": "^8",
   "eslint-plugin-react": "^7",
-  "eslint-plugin-react-hooks": "^4"
+  "eslint-plugin-react-hooks": "^5.0.0"
 });
 
 // 4. Save package.json
