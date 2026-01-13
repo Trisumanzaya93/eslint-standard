@@ -19,8 +19,8 @@ const pkg = JSON.parse(fs.readFileSync(pkgPath, "utf-8"));
 
 // 2. Inject scripts
 pkg.scripts ||= {};
-pkg.scripts.lint = "eslint src";
-pkg.scripts["lint:fix"] = "eslint src --fix";
+pkg.scripts.lint = "eslint .";
+pkg.scripts["lint:fix"] = "eslint . --fix";
 
 // 3. Inject devDependencies
 pkg.devDependencies ||= {};
@@ -50,3 +50,5 @@ console.log("📦 Installing dependencies...\n");
 execSync("npm install", { stdio: "inherit" });
 
 console.log("\n✅ ESLint standard injected successfully!");
+console.log("\n✅ run ESLint standard!");
+execSync("npm run lint", { stdio: "inherit" });
